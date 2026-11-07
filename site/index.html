@@ -18,6 +18,10 @@
       params.delete('__clue_route');
       const search = params.toString();
       history.replaceState(null, '', route + (search ? '?' + search : '') + location.hash);
+    } else if (!route && location.hash.startsWith('#/')) {
+      // 이전 SCC 배포본에서 공유한 #/dashboard 링크도 유지한다.
+      const base = location.pathname.endsWith('/') ? location.pathname : location.pathname + '/';
+      history.replaceState(null, '', base + location.hash.slice(2));
     }
   </script>
   <div id="root"></div>
