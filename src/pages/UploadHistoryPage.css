@@ -1,0 +1,864 @@
+/* UploadHistoryPage.css - Premium Overhaul */
+
+.uh-page-wrapper {
+  min-height: 100vh;
+  background-color: #F8FAFC; /* 대시보드 서브 배경색과 일치시켜 카드 대비 확보 */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 2. Header Style - Matched to Dashboard */
+.uh-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px; /* 20px -> 40px '내 저장 공고'와 완벽 동기화 */
+  background: white;
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  height: 60px; /* 80px -> 60px '내 저장 공고'와 완벽 동기화 */
+}
+
+.uh-header-left {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.uh-logo {
+  font-size: 1.375rem;
+  font-weight: 900;
+  color: #1E3A8A;
+  flex-shrink: 0;
+  width: 80px;
+  letter-spacing: -0.5px;
+}
+
+.uh-header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 3. Main Content Wrapper */
+.uh-main {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 20px 40px;
+  width: 100%;
+}
+
+/* Page Header & Breadcrumb */
+.uh-page-header {
+  margin-bottom: 30px;
+  padding: 0 15px; /* 로고 라인에 맞춰 여백 조정 (40px -> 15px) */
+}
+
+.uh-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #94A3B8;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: fit-content;
+}
+
+.uh-breadcrumb:hover {
+  color: var(--blue-primary);
+  transform: translateX(-4px);
+}
+
+.uh-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.uh-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.uh-title-row h1 {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #0F172A;
+  margin: 0;
+  letter-spacing: -1.5px;
+}
+
+.uh-count-badge {
+  background: #EFF6FF;
+  color: var(--blue-primary);
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 800;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.uh-title-group p {
+  font-size: 0.9375rem;
+  color: #64748B;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Summary Bar - Matched to Logo Alignment */
+.uh-summary-bar {
+  background: white;
+  border-radius: 20px;
+  padding: 8px 40px; /* 60px에서 40px로 조정하여 로고 라인과 일치 */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1.5px solid var(--border-color); /* 테두리 실체화 */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  width: 100%;
+  margin: 0 auto 30px;
+}
+
+.uh-stats-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-item.clickable {
+  cursor: pointer;
+  padding: 8px 20px;
+  border-radius: 12px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.stat-item.clickable:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.stat-item.clickable.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 12px;
+  right: 12px;
+  height: 3px;
+  background: #3B82F6;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(59, 130, 246, 0.4);
+}
+
+.stat-item.clickable.active .stat-label {
+  color: #1E293B;
+}
+
+.stat-label {
+  font-size: 0.84375rem; /* 11px에서 13.5px로 확대 */
+  font-weight: 800;
+  color: #94A3B8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-label.done {
+  color: var(--color-complete);
+}
+
+.stat-label.checking {
+  color: #3B82F6;
+}
+
+.stat-label.analyzing {
+  color: #F59E0B;
+}
+
+.stat-value {
+  font-size: 1.625rem;
+  font-weight: 900;
+  color: #1E293B;
+  letter-spacing: -0.5px;
+}
+
+.stat-value.green {
+  color: var(--color-complete); /* 분석완료 숫자 — 2026-10-12 초록→보라 */
+}
+
+.stat-value.blue {
+  color: #3B82F6;
+}
+
+.stat-value.orange {
+  color: #F59E0B;
+}
+
+.uh-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.uh-search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #F1F5F9;
+  border-radius: 14px;
+  border: 1.5px solid transparent;
+  padding: 0 16px;
+  height: 42px;
+  width: 220px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.uh-search-box:focus-within {
+  background: white;
+  border-color: #3B82F6;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.08);
+  width: 280px;
+}
+
+.uh-search-icon {
+  color: #94A3B8;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.uh-search-box input {
+  border: none;
+  background: transparent;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #1E293B;
+  outline: none;
+  width: 100%;
+}
+
+.uh-search-box input::placeholder {
+  color: #94A3B8;
+  font-weight: 600;
+}
+
+.uh-search-clear {
+  background: transparent;
+  border: none;
+  color: #94A3B8;
+  cursor: pointer;
+  padding: 4px;
+  font-size: 0.6875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  margin-left: 4px;
+}
+
+.uh-search-clear:hover {
+  background: #E2E8F0;
+  color: #475569;
+}
+
+.uh-sort-select {
+  padding: 10px 18px;
+  border-radius: 14px;
+  border: 1.5px solid rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.7);
+  font-size: 0.84375rem;
+  font-weight: 700;
+  color: #475569;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s;
+  height: 42px;
+}
+
+.uh-sort-select:hover {
+  background: #FFFFFF;
+  border-color: #3B82F6;
+}
+
+/* 4. History Card List */
+.uh-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* 상태 묶음 제목 구분선 — "임시저장 · 6 ─────" */
+.uh-group-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+  padding: 0 4px;
+}
+
+.uh-group-header:first-child {
+  margin-top: 0;
+}
+
+.uh-group-label {
+  font-size: 0.9375rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+}
+
+.uh-group-count {
+  min-width: 22px;
+  padding: 1px 8px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-align: center;
+  background: var(--color-bg-base);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+}
+
+.uh-group-header.analyzing .uh-group-count {
+  color: var(--color-caution);
+}
+
+.uh-group-header.done .uh-group-count {
+  color: var(--color-complete);
+}
+
+.uh-group-line {
+  flex: 1;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--color-text-muted);
+  opacity: 0.35;
+}
+
+.uh-card-premium {
+  position: relative;
+  background: white; /* 완전 화이트 배경으로 박스감 강조 */
+  border-radius: 22px;
+  border: 1px solid var(--border-color); /* 실제 테두리선 추가 */
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03); /* 은은한 그림자 추가 */
+  overflow: hidden;
+}
+
+/* Unified Blue Backlighting (Halo Effect) on Hover for all statuses */
+/* 상태 색 띠(2026-10-12) — 분석완료=보라, 임시저장=주황. 구분선 제목이 화면 밖이어도 카드만 보고 구분된다. */
+.uh-card-premium::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 5px;
+  background: transparent;
+}
+
+.uh-card-premium.done::before {
+  background: var(--color-complete);
+}
+
+.uh-card-premium.analyzing::before {
+  background: var(--color-caution);
+}
+
+.uh-card-premium:hover {
+  background: white;
+  transform: translateY(-5px);
+  box-shadow: 
+    0 15px 45px rgba(59, 130, 246, 0.15), /* Unified Blue Halo */
+    0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.uh-card-content {
+  position: relative;
+  z-index: 1;
+  padding: 20px 40px; /* 24px에서 20px로 상하 여백 축소하여 전체 높이 유지 */
+  display: flex;
+  flex-direction: column;
+  gap: 14px; /* 18px에서 14px로 간격 축소 */
+}
+
+/* Scan Line Animation for Analyzing */
+.uh-scan-line {
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(37, 99, 235, 0.08),
+      transparent);
+  transform: skewX(-20deg);
+  animation: scanEffect 3s infinite linear;
+  pointer-events: none;
+}
+
+@keyframes scanEffect {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 200%;
+  }
+}
+
+/* Card Metadata */
+.uh-card-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.uh-filename-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.uh-deadline-tag {
+  font-size: 0.6875rem;
+  font-weight: 800;
+  color: #E11D48;
+  background: #FFF1F2;
+  padding: 3px 10px;
+  border-radius: 100px;
+  border: 1px solid #FFE4E6;
+  letter-spacing: -0.2px;
+}
+
+/* 마감일 수동 수정(결정③): 기존 태그 스타일 재사용 + 최소 편집 어포던스. */
+.uh-deadline-editable {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  font-family: inherit;
+}
+.uh-deadline-editable:hover {
+  background: #FFE4E6;
+}
+/* "추정" 배지: 자동 추출 마감일에만 표시(중립 회색, 작게). */
+.uh-deadline-est {
+  font-size: 0.59375rem;
+  font-weight: 800;
+  color: #64748B;
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  border-radius: 100px;
+  padding: 1px 6px;
+  letter-spacing: 0.2px;
+}
+/* 마감일 없음 → 추가 버튼(옅은 파란 점선). */
+.uh-deadline-add {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #94A3B8;
+  background: transparent;
+  border: 1px dashed #CBD5E1;
+  border-radius: 100px;
+  padding: 3px 10px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s;
+}
+.uh-deadline-add:hover {
+  color: #3B82F6;
+  border-color: #93C5FD;
+  background: #EFF6FF;
+}
+/* 편집 중 date input + 지우기. */
+.uh-deadline-edit-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.uh-deadline-edit {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #1E293B;
+  padding: 2px 8px;
+  border: 1px solid #93C5FD;
+  border-radius: 8px;
+  font-family: inherit;
+}
+.uh-deadline-clear {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #E11D48;
+  background: #FFF1F2;
+  border: 1px solid #FFE4E6;
+  border-radius: 100px;
+  padding: 2px 9px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.uh-meta-icon {
+  width: 38px;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94A3B8;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all 0.3s;
+}
+
+.uh-card-premium:hover .uh-meta-icon {
+  background: #EFF6FF;
+  color: #3B82F6;
+  transform: scale(1.05);
+}
+
+.uh-meta-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.uh-filename {
+  font-size: 1.15625rem; /* 16px에서 18.5px로 시원하게 확대 */
+  font-weight: 700;
+  color: #1E293B;
+  margin: 0;
+  letter-spacing: -0.4px;
+}
+
+.uh-dot-divider {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #E2E8F0;
+}
+
+.uh-date-subtle {
+  font-size: 0.84375rem;
+  color: #94A3B8;
+  font-weight: 500;
+}
+
+/* Card Footer */
+.uh-card-footer {
+  display: flex;
+  justify-content: flex-end; /* 왼쪽 상태·태그 묶음 삭제 후 버튼만 오른쪽 정렬 */
+  align-items: center;
+  padding-top: 4px;
+}
+
+.uh-footer-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Status Pill */
+.status-pill {
+  font-size: 0.71875rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 14px;
+  border-radius: 100px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.status-pill.done {
+  color: var(--color-complete);
+}
+
+.status-pill.done .status-dot {
+  background: var(--color-complete);
+  box-shadow: 0 0 10px var(--color-complete);
+}
+
+.status-pill.needs-check {
+  color: #1D4ED8;
+}
+
+.status-pill.needs-check .status-dot {
+  background: #3B82F6;
+  box-shadow: 0 0 10px #3B82F6;
+}
+
+.status-pill.analyzing {
+  color: #D97706;
+}
+
+.status-pill.analyzing .status-dot {
+  background: #F59E0B;
+}
+
+@keyframes pulseDot {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Premium Tags */
+.uh-tag-group {
+  display: flex;
+  gap: 12px;
+}
+
+.uh-res-tag-v4 {
+  font-size: 0.75rem;
+  font-weight: 650;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #64748B;
+}
+
+.uh-res-tag-v4::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #CBD5E1;
+}
+
+.uh-res-tag-v4.danger {
+  color: #E11D48;
+}
+
+.uh-res-tag-v4.danger::before {
+  background: #E11D48;
+  box-shadow: 0 0 8px rgba(225, 29, 72, 0.3);
+}
+
+.uh-res-tag-v4.neutral-black {
+  color: #1E293B; /* 모든 비 위험 요소를 검정색으로 통일 */
+}
+
+.uh-res-tag-v4.neutral-black::before {
+  background: #64748B; /* 점을 무채색으로 변경 */
+  box-shadow: none; /* 발광 제거 */
+}
+
+/* Premium Actions */
+.uh-footer-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.btn-archive-round {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* 아이콘 버튼 툴팁 — 마우스를 올리면 버튼 위에 기능 이름이 뜬다(2026-10-12). */
+.btn-archive-round[data-tooltip] {
+  position: relative;
+}
+
+.btn-archive-round[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translate(-50%, 4px);
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: var(--color-text-primary);
+  color: var(--color-bg-base);
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s, transform 0.15s;
+  z-index: 20;
+}
+
+.btn-archive-round[data-tooltip]:hover::after,
+.btn-archive-round[data-tooltip]:focus-visible::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.btn-archive-round.trash:hover {
+  background: #FEF2F2;
+  color: #EF4444;
+  border-color: #FEE2E2;
+}
+
+/* 아이콘만 기울인다 — 버튼째 돌리면 툴팁까지 기울어진다. */
+.btn-archive-round.trash svg {
+  transition: transform 0.3s;
+}
+
+.btn-archive-round.trash:hover svg {
+  transform: rotate(10deg);
+}
+
+.btn-archive-round.stop:hover {
+  background: #FFF7ED;
+  color: #F97316;
+  border-color: #FFEDD5;
+}
+
+.btn-archive-report {
+  padding: 10px 24px;
+  border-radius: 100px;
+  border: none;
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  color: white;
+  font-size: 0.84375rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.25);
+  transition: all 0.3s;
+}
+
+.btn-archive-report:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.35);
+  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+}
+
+.btn-archive-report.outline {
+  background: transparent;
+  border: 1.5px solid #2563EB;
+  color: #2563EB;
+  box-shadow: none;
+}
+
+.btn-archive-report.outline:hover {
+  background: #EFF6FF;
+  border-color: #1D4ED8;
+  color: #1D4ED8;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+}
+
+/* Empty State */
+.uh-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0;
+  color: #64748B;
+  gap: 16px;
+  text-align: center;
+}
+
+.uh-empty-state svg {
+  color: #CBD5E1;
+  margin-bottom: 8px;
+}
+
+.uh-empty-state p {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.uh-reset-filter {
+  padding: 8px 18px;
+  border-radius: 10px;
+  border: 1.5px solid #E2E8F0;
+  background: white;
+  color: #475569;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.uh-reset-filter:hover {
+  background: #F8FAFC;
+  border-color: #CBD5E1;
+  color: #1E293B;
+  transform: translateY(-1px);
+}
+
+/* Calendar Button and Toast Styles */
+.btn-archive-round.checklist:hover {
+  background: var(--color-primary-50);
+  color: var(--color-primary);
+  border-color: var(--color-primary-100);
+  transform: translateY(-2px);
+}
+
+.btn-archive-round.calendar:hover {
+  background: #EFF6FF;
+  color: #3B82F6;
+  border-color: #DBEAFE;
+  transform: translateY(-2px);
+}
+
+.uh-toast {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15, 23, 42, 0.9);
+  color: white;
+  padding: 14px 24px;
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 10000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+.uh-toast svg {
+  color: #10B981;
+}

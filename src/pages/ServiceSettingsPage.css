@@ -1,0 +1,245 @@
+/* ServiceSettingsPage.css - Premium SaaS Service UI */
+
+.ss-wrapper {
+  width: 100%;
+  padding-bottom: 100px;
+  background: transparent;
+  color: #0F172A;
+}
+
+/* Toast (진단 기록 삭제 완료 안내, P4-5) */
+.ss-toast {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1E293B;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 16px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 2000;
+}
+
+/* Header */
+.ss-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #E2E8F0;
+  height: 60px;
+}
+
+.ss-back-btn {
+  padding: 8px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #64748B;
+  display: flex;
+  align-items: center;
+}
+
+.ss-header h2 {
+  font-size: 1.0625rem;
+  font-weight: 850;
+  color: #0F172A;
+  margin-left: 8px;
+  flex: 1;
+}
+
+.ss-save-indicator {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #10B981;
+  background: #ECFDF5;
+  padding: 4px 10px;
+  border-radius: 8px;
+  margin-right: 8px;
+}
+
+/* Main Layout */
+.ss-main {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.ss-content-inner {
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Section & Cards */
+.ss-section {
+  margin-bottom: 40px;
+}
+
+.ss-section-title {
+  font-size: 0.8125rem;
+  font-weight: 900;
+  color: #3B82F6;
+  margin: 0 0 16px 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ss-card {
+  background: white;
+  border-radius: 28px;
+  border: 1px solid #E2E8F0;
+  padding: 12px 28px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+/* Toggle & Menu Items */
+.ss-toggle-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.ss-toggle-item:last-child {
+  border-bottom: none;
+}
+
+.ss-item-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ss-item-label {
+  font-size: 1.03125rem;
+  font-weight: 750;
+  color: #334155;
+}
+
+.ss-item-sub {
+  font-size: 0.75rem;
+  color: #94A3B8;
+}
+
+.ss-menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #F1F5F9;
+  cursor: pointer;
+}
+
+.ss-menu-item:last-child {
+  border-bottom: none;
+}
+
+.ss-menu-label {
+  font-size: 1.03125rem;
+  font-weight: 750;
+  color: #334155;
+}
+
+.ss-menu-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ss-current-val {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #64748B;
+}
+
+.ss-menu-item.danger .ss-menu-label {
+  color: #EF4444;
+}
+
+/* Custom Toggle Switch */
+.ss-toggle {
+  width: 48px;
+  height: 26px;
+  border-radius: 99px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ss-toggle::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ss-toggle.on {
+  background: #3B82F6;
+}
+
+.ss-toggle.on::after {
+  left: calc(100% - 23px);
+}
+
+.ss-toggle.off {
+  background: #E2E8F0;
+}
+
+/* Accent Color Selection */
+.ss-accent-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.ss-accent-row:last-child {
+  border-bottom: none;
+}
+
+.ss-color-palette {
+  display: flex;
+  gap: 12px;
+}
+
+.ss-color-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.ss-color-circle:hover {
+  transform: scale(1.1);
+}
+
+.ss-color-circle.active {
+  border-color: #0F172A;
+  box-shadow: 0 0 0 2px white inset;
+}
+
+/* Footer Section */
+.ss-info-footer {
+  text-align: center;
+  font-size: 0.78125rem;
+  color: #94A3B8;
+  margin-top: 20px;
+}

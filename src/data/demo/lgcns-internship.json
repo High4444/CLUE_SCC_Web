@@ -1,0 +1,223 @@
+{
+  "id": "lgcns-internship",
+  "fileName": "LG_하계_채용연계형_인턴십_모집_공고.pdf",
+  "title": "LG CNS 2021 하계 채용연계형 인턴십 모집 공고 (학사·석박사)",
+  "issuer": "LG CNS",
+  "category": "recruitment",
+  "pages": [
+    {
+      "page": 1,
+      "title": "디지털 신기술 아카데미 (학사)",
+      "sub": "지원자격 · 인턴십 내용 · 처우 · 지원방법",
+      "contentHtml": "<p>LG CNS 『디지털 신기술 아카데미』 제2기는 <span class=\"cp-token acid-a\" data-acid-id=\"a1\">채용연계형</span> 인턴십이며, <span class=\"cp-token acid-i\" data-acid-id=\"i2\">모집기간은 2021년 5월 3일 ~ 5월 14일</span>입니다.</p><p><span class=\"cp-token acid-d\" data-acid-id=\"d3\">지원자격은 ’22년 8월까지 졸업이 가능한 3·4학년(휴학생 가능)</span>이며, 병역필 또는 면제자로 해외여행에 결격사유가 없어야 합니다. 모집전공은 컴퓨터공학(주/부/복수전공)이며 프로그래밍 역량이 필요하고 IT동아리 경험을 우대합니다.</p><p>인턴십은 ’21.07.05.(월) ~ 08.06.(금) 서울 지역에서 SW Boot Camp(1주)와 현장실습(4주)으로 진행됩니다. SW Boot Camp의 주제인 AM(Application Modernization)은 비즈니스 변화에 맞춰 기존 IT의 응용구조, 개발방식, 아키텍처를 바꾸는 것을 뜻합니다. <span class=\"cp-token acid-i\" data-acid-id=\"i1\">인턴십 참가 지급비는 총 240만원</span>이며, 임원면접에 합격하면 졸업시점에 입사할 수 있습니다.</p><p>신청은 ’21년 5/14(금) 18:00까지 이메일로 하고, <span class=\"cp-token acid-d\" data-acid-id=\"d1\">E-Mail 신청 후 발급된 ID/PW로 5월 17(월) 23:00까지 LG Careers 공고 지원</span>이 필요합니다. <span class=\"cp-token acid-c\" data-acid-id=\"c1\">E-mail 접수 후 개별로 지원서 및 자기소개서 작성 안내</span>가 오며, 서류전형·필기전형(5월 말)·1차 면접(6월 중순)을 거쳐 최종 선발된 사람만 참가할 수 있습니다.</p>"
+    },
+    {
+      "page": 2,
+      "title": "석/박사 맞춤형 인턴십",
+      "sub": "Path별 모집 · 공통 자격 · 기간 · 전형",
+      "contentHtml": "<p>석/박사 맞춤형 인턴십(제4기)은 <span class=\"cp-token acid-a\" data-acid-id=\"a3\">Path</span>별로 모집·선발·운영되며, AI Path, Big Data Path, UX Path, Entrue컨설팅 아카데미가 있습니다. 표에는 <span class=\"cp-token acid-d\" data-acid-id=\"d2\">AI Path (박사)</span>로 표기되어 있습니다.</p><p><span class=\"cp-token acid-d\" data-acid-id=\"d4\">공통 학위 조건은 박사(포닥 포함) 및 석사 학위 기졸업자 및 학위 취득 예정자(’22년 8월까지)</span>이며, 병역필 또는 면제자로 해외여행에 결격사유가 없어야 합니다.</p><p>인턴십 기간은 1차 면접 때 개인별로 협의하며(7/5~8/31), <span class=\"cp-token acid-d\" data-acid-id=\"d6\">2주 이상 참가가 가능하면 지원 가능</span>합니다. 필기전형(5월 말, 온라인)은 Path별로 다르고 인적성검사가 포함되며, <span class=\"cp-token acid-d\" data-acid-id=\"d5\">AI/빅데이터 박사의 경우 분석과제는 면제</span>입니다. 1차 면접은 6월 중순 화상으로 진행하고, 인턴십 후 임원면접에 합격하면 학위 취득 시점에 입사할 수 있습니다.</p><p>신청 방법은 학사 과정과 같이 5/14(금) 18:00까지 이메일, 5월 17(월) 23:00까지 LG Careers 지원입니다.</p>"
+    }
+  ],
+  "acidResults": [
+    {
+      "id": "a1",
+      "tag": "A",
+      "pageNumber": 1,
+      "title": "P.1 채용연계형",
+      "why": "인턴십을 마친 뒤 임원면접에 합격하면 정식 입사로 이어지는 인턴십을 말합니다.",
+      "impact": "인턴십 참가만으로 채용이 확정되는 게 아니라 마지막 임원면접을 통과해야 합니다.",
+      "check": "인턴십 이후 임원면접이 있다는 걸 알고 있나요?"
+    },
+    {
+      "id": "a3",
+      "tag": "A",
+      "pageNumber": 2,
+      "title": "P.2 Path",
+      "why": "석·박사 인턴십의 분야별 모집 단위로, AI·Big Data·UX·Entrue컨설팅 아카데미로 나뉩니다.",
+      "impact": "Path마다 전공 요건과 필기전형 방식(분석과제, 포트폴리오 등)이 다릅니다.",
+      "check": "지원할 Path의 필기전형 방식을 확인했나요?"
+    },
+    {
+      "id": "c1",
+      "tag": "C",
+      "pageNumber": 1,
+      "title": "P.1 지원서 양식은 이메일 접수 후 안내",
+      "why": "지원서와 자기소개서 양식이 공고에 없고, 이메일 신청 후 개별로 안내됩니다.",
+      "impact": "공고만 보고 자기소개서를 미리 준비할 수 없어, 안내 메일을 놓치면 일정이 빠듯해집니다.",
+      "check": "이메일 신청 후 안내 메일을 확인했나요?"
+    },
+    {
+      "id": "i1",
+      "tag": "I",
+      "pageNumber": 1,
+      "title": "P.1 인턴십 지급비 총 240만원",
+      "why": "학사 인턴십(약 5주) 참가자에게 총 240만원이 지급됩니다.",
+      "impact": "월급이 아니라 인턴십 전체 기간의 총액입니다.",
+      "check": "총액 기준이라는 걸 확인했나요?"
+    },
+    {
+      "id": "i2",
+      "tag": "I",
+      "pageNumber": 1,
+      "title": "P.1 공고 모집 기간",
+      "why": "모집기간이 2021년 5월 3일 ~ 5월 14일로, 이미 마감된 공고입니다.",
+      "impact": "같은 프로그램에 지원하려면 최신 기수 공고를 따로 찾아야 합니다.",
+      "check": "지금 보고 있는 공고가 최신 기수인지 확인했나요?"
+    },
+    {
+      "id": "d1",
+      "tag": "D",
+      "pageNumber": 1,
+      "title": "P.1 접수가 두 번",
+      "why": "이메일 신청(5/14 18:00까지)만으로 끝나지 않고, 발급받은 ID/PW로 5/17 23:00까지 LG Careers에 다시 지원해야 합니다.",
+      "impact": "이메일만 보내고 LG Careers 지원을 빠뜨리면 지원이 완료되지 않습니다.",
+      "check": "LG Careers 지원까지 마쳤나요?"
+    },
+    {
+      "id": "d3",
+      "tag": "D",
+      "pageNumber": 1,
+      "title": "P.1 학사는 졸업 시점과 학년 조건",
+      "why": "’22년 8월까지 졸업 가능한 3·4학년만 지원할 수 있고 휴학생도 가능합니다.",
+      "impact": "병역필 또는 면제자여야 하고 컴퓨터공학 주·부·복수전공이어야 합니다.",
+      "check": "’22년 8월까지 졸업할 수 있나요?"
+    },
+    {
+      "id": "d2",
+      "tag": "D",
+      "pageNumber": 2,
+      "title": "P.2 석사도 AI Path에 지원할 수 있나",
+      "why": "표에는 \"AI Path (박사)\"로 되어 있지만, 공통 학위 조건은 \"박사 및 석사\", 필기 안내는 \"AI/빅데이터 박사는 분석과제 면제\"라고 되어 있습니다.",
+      "impact": "석사가 AI Path에 지원할 수 있는지 문서만으로는 판단할 수 없습니다.",
+      "check": "석사라면 AI Path 지원 가능 여부를 담당자에게 확인했나요?",
+      "needsCheck": true
+    },
+    {
+      "id": "d4",
+      "tag": "D",
+      "pageNumber": 2,
+      "title": "P.2 석·박사 학위 조건",
+      "why": "석사·박사(포닥 포함) 학위를 이미 받았거나 ’22년 8월까지 받을 예정이어야 합니다.",
+      "impact": "병역필 또는 면제 조건은 학사와 같습니다.",
+      "check": "’22년 8월까지 학위를 받을 수 있나요?"
+    },
+    {
+      "id": "d5",
+      "tag": "D",
+      "pageNumber": 2,
+      "title": "P.2 박사는 분석과제 면제",
+      "why": "AI·Big Data Path 박사 지원자는 필기전형의 분석과제를 보지 않습니다.",
+      "impact": "석사는 딥러닝·머신러닝 분석과제(R 또는 Python)를 봐야 합니다.",
+      "check": "석사라면 분석과제를 준비했나요?"
+    },
+    {
+      "id": "d6",
+      "tag": "D",
+      "pageNumber": 2,
+      "title": "P.2 2주 이상 참가 가능해야 지원가능",
+      "why": "석·박사 인턴십 기간은 개인별로 협의하지만, 2주 이상 참가할 수 있어야 지원할 수 있습니다.",
+      "impact": "연구실 일정 때문에 2주를 비우기 어렵다면 지원 대상이 아닙니다.",
+      "check": "7/5~8/31 중 2주 이상 비울 수 있나요?"
+    }
+  ],
+  "recruitment": {
+    "tracks": [
+      {
+        "id": "bachelor",
+        "label": "학사 · 디지털 신기술 아카데미"
+      },
+      {
+        "id": "graduate",
+        "label": "석·박사 · 맞춤형 인턴십"
+      }
+    ],
+    "stages": [
+      {
+        "title": "이메일 신청",
+        "date": "5.3 ~ 5.14 18시"
+      },
+      {
+        "title": "LG Careers 지원",
+        "date": "5.17 23시까지",
+        "criterion": "접수 2번",
+        "itemId": "d1"
+      },
+      {
+        "title": "서류 전형",
+        "date": "5월"
+      },
+      {
+        "title": "필기 전형",
+        "date": "5월 말",
+        "track": "bachelor"
+      },
+      {
+        "title": "필기 전형",
+        "date": "5월 말 · 온라인",
+        "track": "graduate",
+        "criterion": "Path별 · 박사 분석과제 면제",
+        "itemId": "d5"
+      },
+      {
+        "title": "1차 면접",
+        "date": "6월 중순",
+        "track": "bachelor"
+      },
+      {
+        "title": "1차 면접",
+        "date": "6월 중순 · 화상",
+        "track": "graduate"
+      },
+      {
+        "title": "인턴십",
+        "date": "7.5 ~ 8.6",
+        "track": "bachelor",
+        "criterion": "지급비 총 240만원",
+        "itemId": "i1"
+      },
+      {
+        "title": "인턴십",
+        "date": "7.5 ~ 8.31 중 협의",
+        "track": "graduate",
+        "criterion": "2주 이상",
+        "itemId": "d6"
+      },
+      {
+        "title": "임원면접",
+        "date": "마지막 주",
+        "criterion": "합격 시 입사",
+        "itemId": "a1"
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "question": "이메일 신청을 마친 학생이 해야 할 다음 단계는?",
+      "options": [
+        "결과를 기다리면 된다.",
+        "발급된 ID/PW로 5월 17일 23시까지 LG Careers에 지원한다.",
+        "학교 취업센터에 서류를 낸다.",
+        "필기시험장에 바로 간다."
+      ],
+      "answerIndex": 1,
+      "feedback": "공고에 'E-Mail 신청 후 발급된 ID/PW로 5월 17(월) 23:00까지 LG Careers 공고 지원 필요'라고 되어 있습니다."
+    }
+  ],
+  "checklist": [
+    {
+      "id": "doc-1",
+      "label": "이메일 신청 — 5/14(금) 18:00까지",
+      "pageNumber": 1
+    },
+    {
+      "id": "doc-2",
+      "label": "발급된 ID/PW로 LG Careers 공고 지원 — 5/17(월) 23:00까지",
+      "pageNumber": 1
+    },
+    {
+      "id": "doc-3",
+      "label": "지원서 및 자기소개서 작성 (이메일 접수 후 개별 안내)",
+      "pageNumber": 1
+    }
+  ]
+}

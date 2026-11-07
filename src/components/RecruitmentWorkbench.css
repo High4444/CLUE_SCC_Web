@@ -1,0 +1,118 @@
+/* "채용" 워크벤치 — 지원사업 3분할 그대로 쓰고, 가운데 패널 맨 위에만 전형 흐름 블록을 얹는다. */
+
+/* 블록이 위에 붙고 그 아래 기존 CenterPanel이 남은 공간을 쓴다. */
+.rec-center > .center-panel-outer {
+    height: auto;
+    flex: 1;
+    min-height: 0;
+}
+
+.rec-block {
+    flex-shrink: 0;
+    padding: 16px 20px 14px;
+    border-bottom: 1px solid var(--color-border);
+    background: #fff;
+}
+
+/* ── 경로 칩 ── */
+.rec-tracks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 14px;
+}
+
+.rec-track-chip {
+    padding: 5px 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    background: #fff;
+    font-size: 0.71875rem;
+    font-weight: 700;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+}
+
+.rec-track-chip.active {
+    background: var(--color-primary-50);
+    border-color: var(--color-primary-300);
+    color: var(--color-primary-700);
+}
+
+/* ── 전형 단계 타임라인 ── */
+.rec-timeline {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    overflow-x: auto;
+    padding-bottom: 4px;
+}
+
+.rec-node {
+    position: relative;
+    flex: 1 0 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 0 12px 0 0;
+    border-radius: var(--radius-md);
+}
+
+.rec-node.clickable {
+    cursor: pointer;
+}
+
+/* 노드 사이 연결선 */
+.rec-node::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 18px;
+    width: 100%;
+    height: 2px;
+    background: var(--color-border);
+}
+
+.rec-node:last-child::before {
+    display: none;
+}
+
+.rec-node-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--color-border);
+    z-index: 1;
+}
+
+.rec-node.clickable .rec-node-dot {
+    background: var(--color-primary-300);
+}
+
+.rec-node.selected .rec-node-dot {
+    background: var(--color-primary);
+}
+
+.rec-node-title {
+    font-size: 0.78125rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+    line-height: 1.4;
+}
+
+.rec-node.selected .rec-node-title {
+    color: var(--color-primary-700);
+}
+
+.rec-node-date {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    color: var(--color-text-secondary);
+}
+
+.rec-node-criterion {
+    font-size: 0.6875rem;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+}

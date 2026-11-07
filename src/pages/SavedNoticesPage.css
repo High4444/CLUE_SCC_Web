@@ -1,0 +1,457 @@
+/* SavedNoticesPage.css - Premium Visual Overhaul */
+
+.sn-page-wrapper {
+  min-height: 100vh;
+  background: radial-gradient(circle at top right, #EEF2FF 0%, #F8FAFC 40%, #FFFFFF 100%);
+  /* 미세 메시 그라데이션 */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 1. Header - Unified System */
+.sn-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  background: white;
+  border-bottom: 1px solid #E2E8F0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  height: 60px;
+}
+
+.sn-header-left {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.sn-logo {
+  font-size: 1.375rem;
+  font-weight: 900;
+  color: #1E3A8A;
+  flex-shrink: 0;
+  width: 80px;
+  letter-spacing: -0.5px;
+  cursor: pointer;
+}
+
+.sn-header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 2. Main Layout */
+.sn-main {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 20px 40px;
+  width: 100%;
+}
+
+.sn-page-header {
+  margin-bottom: 30px;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.sn-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sn-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sn-title-row h1 {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #0F172A;
+  margin: 0;
+  letter-spacing: -1.5px;
+}
+
+.sn-count-badge {
+  background: #EFF6FF;
+  color: #3B82F6;
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 800;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.sn-title-group p {
+  font-size: 0.9375rem;
+  color: #64748B;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* 3. Premium Card List */
+.sn-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 28px;
+}
+
+.sn-card-premium {
+  position: relative;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 28px 30px;
+  /* 30px 정렬선 동기화 */
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sn-card-premium:hover {
+  transform: translateY(-8px) scale(1.01);
+  background: white;
+  box-shadow:
+    0 20px 45px rgba(59, 130, 246, 0.15),
+    /* 블루 앰비언트 하로 */
+    0 10px 20px rgba(0, 0, 0, 0.04);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+/* Glass Specular Shine Animation */
+.sn-glass-shine {
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 60%;
+  height: 200%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent);
+  transform: skewX(-25deg);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.sn-card-premium:hover .sn-glass-shine {
+  animation: sn-shine-flow 0.8s ease-in-out forwards;
+}
+
+@keyframes sn-shine-flow {
+  0% {
+    left: -150%;
+    top: -50%;
+  }
+
+  100% {
+    left: 150%;
+    top: 50%;
+  }
+}
+
+/* 4. Card Elements */
+.sn-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.sn-saved-time {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.71875rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  letter-spacing: 0.2px;
+}
+
+.sn-dday-badge {
+  font-size: 0.6875rem;
+  font-weight: 900;
+  padding: 6px 14px;
+  border-radius: 100px;
+  background: #EF4444;
+  color: white;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+/* 만료 배지(P3-4): 중립/회색 — 마감 경과 공고. */
+.sn-dday-badge.expired {
+  background: #E2E8F0;
+  color: #64748B;
+  box-shadow: none;
+}
+
+/* Urgent Pulse Animation */
+.sn-card-premium.urgent .sn-dday-badge {
+  animation: sn-dday-pulse 2s infinite ease-in-out;
+}
+
+@keyframes sn-dday-pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+  }
+
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 6px 18px rgba(239, 68, 68, 0.5);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+  }
+}
+
+.sn-match-rate {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sn-match-label {
+  font-size: 0.6875rem;
+  color: #94A3B8;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.sn-match-value {
+  font-size: 1rem;
+  font-weight: 800;
+  /* 900에서 800으로 완화 */
+  color: #3B82F6;
+}
+
+.sn-card-premium h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  /* 900에서 700으로 슬림하게 조정 */
+  margin-bottom: 8px;
+  line-height: 1.4;
+  color: #1E293B;
+  letter-spacing: -0.5px;
+}
+
+.sn-agency {
+  font-size: 0.84375rem;
+  color: #64748B;
+  margin-bottom: 24px;
+  font-weight: 500;
+  /* 600에서 500으로 완화 */
+}
+
+.sn-tag-group {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.sn-tag {
+  font-size: 0.6875rem;
+  color: #3B82F6;
+  font-weight: 800;
+  background: rgba(59, 130, 246, 0.08);
+  padding: 5px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(59, 130, 246, 0.1);
+}
+
+/* 5. Premium Actions */
+.sn-card-footer {
+  display: flex;
+  gap: 12px;
+}
+
+.sn-btn-primary {
+  flex: 1;
+  padding: 14px;
+  border-radius: 16px;
+  border: none;
+  background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.sn-btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent);
+  transition: left 0.5s;
+}
+
+.sn-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4);
+  background: linear-gradient(135deg, #60A5FA 0%, #2563EB 100%);
+}
+
+.sn-btn-primary:hover::after {
+  left: 100%;
+}
+
+.sn-btn-icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  color: #94A3B8;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.sn-btn-icon:hover {
+  background: #FFEBEB;
+  color: #EF4444;
+  border-color: #FEE2E2;
+  transform: scale(1.05);
+}
+
+.sn-btn-icon.saved {
+  color: #EF4444;
+}
+
+/* 6. Premium Search Box Style */
+.sn-search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #F1F5F9;
+  border-radius: 14px;
+  border: 1.5px solid transparent;
+  padding: 0 16px;
+  height: 42px;
+  width: 240px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.sn-search-box:focus-within {
+  background: white;
+  border-color: #3B82F6;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.1);
+  width: 300px;
+}
+
+.sn-search-icon {
+  color: #94A3B8;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.sn-search-box input {
+  border: none;
+  background: transparent;
+  font-size: 0.84375rem;
+  font-weight: 700;
+  color: #1E293B;
+  outline: none;
+  width: 100%;
+}
+
+.sn-search-box input::placeholder {
+  color: #94A3B8;
+  font-weight: 600;
+}
+
+.sn-search-clear {
+  background: transparent;
+  border: none;
+  color: #94A3B8;
+  cursor: pointer;
+  padding: 4px;
+  font-size: 0.6875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  margin-left: 4px;
+}
+
+.sn-search-clear:hover {
+  background: #E2E8F0;
+  color: #475569;
+}
+
+/* 7. Empty State and Reset Styling */
+.sn-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0;
+  color: #64748B;
+  gap: 16px;
+  text-align: center;
+  width: 100%;
+}
+
+.sn-empty-state svg {
+  color: #CBD5E1;
+  margin-bottom: 8px;
+}
+
+.sn-empty-state p {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.sn-reset-filter {
+  padding: 8px 18px;
+  border-radius: 100px;
+  border: 1.5px solid #E2E8F0;
+  background: white;
+  color: #475569;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.sn-reset-filter:hover {
+  background: #F8FAFC;
+  border-color: #CBD5E1;
+  color: #1E293B;
+  transform: translateY(-1px);
+}

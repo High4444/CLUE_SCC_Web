@@ -1,0 +1,376 @@
+/* 예시 비교 화면 (청년도약계좌 vs 청년미래적금) */
+.cs-root {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.cs-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.cs-topbar-policies {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.cs-topbar-policy {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cs-topbar-vs {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+}
+
+.cs-back-btn {
+    padding: 8px 16px;
+    border: 1px solid var(--color-border);
+    border-radius: 100px;
+    background: var(--color-bg-base);
+    color: var(--color-text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.cs-back-btn:hover {
+    color: var(--color-primary-700);
+    border-color: var(--color-primary-300);
+}
+
+.cs-grid {
+    display: grid;
+    grid-template-columns: minmax(300px, 380px) minmax(0, 1fr);
+    gap: 20px;
+    align-items: start;
+}
+
+.cs-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 카드 */
+.cs-card {
+    padding: 18px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-bg-base);
+}
+
+.cs-card-accent {
+    border-top: 3px solid var(--color-caution);
+    background: var(--color-bg-surface);
+}
+
+.cs-card-title,
+.cs-section-title {
+    margin: 0 0 12px;
+    font-size: 0.9375rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+}
+
+.cs-card-sub {
+    margin: -6px 0 12px;
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+}
+
+.cs-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cs-highlight {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 12px;
+    border-radius: var(--radius-md);
+    background: var(--color-bg-base);
+    border: 1px solid var(--color-border);
+}
+
+.cs-highlight-label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--color-text-secondary);
+}
+
+.cs-highlight-line {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.8125rem;
+    line-height: 1.45;
+    color: var(--color-text-primary);
+}
+
+.cs-highlight-line .pcp-th-label-badge {
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+/* 내 조건 확인 */
+.cs-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.cs-field {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8125rem;
+    color: var(--color-text-secondary);
+}
+
+.cs-field > span {
+    flex-shrink: 0;
+    min-width: 44px;
+}
+
+.cs-field > em {
+    flex-shrink: 0;
+    font-style: normal;
+    font-size: 0.75rem;
+}
+
+.cs-field input,
+.cs-field select {
+    width: 100%;
+    min-width: 0;
+    padding: 8px 10px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-base);
+    color: var(--color-text-primary);
+    font: inherit;
+    font-size: 0.8125rem;
+}
+
+.cs-field-wide {
+    grid-column: 1 / -1;
+}
+
+.cs-run-btn {
+    grid-column: 1 / -1;
+    padding: 10px 14px;
+    border: none;
+    border-radius: var(--radius-md);
+    background: var(--color-primary);
+    color: var(--color-bg-base);
+    font-size: 0.875rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.cs-run-btn:disabled {
+    background: var(--color-primary-200);
+    cursor: default;
+}
+
+.cs-form-note {
+    margin: 8px 0 0;
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+}
+
+.cs-results {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.cs-result {
+    padding: 12px;
+    border-radius: var(--radius-md);
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+}
+
+.cs-result-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
+.cs-result-name {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+/* 상태 pill */
+.cs-pill {
+    margin-left: auto;
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.cs-pill.ok {
+    background: color-mix(in srgb, var(--color-success) 14%, var(--color-bg-base));
+    color: var(--color-success);
+}
+
+.cs-pill.check {
+    background: color-mix(in srgb, var(--color-caution) 16%, var(--color-bg-base));
+    color: var(--color-caution);
+}
+
+.cs-pill.no {
+    background: color-mix(in srgb, var(--color-warning) 12%, var(--color-bg-base));
+    color: var(--color-warning);
+}
+
+/* 상세 비교 표 */
+.cs-table {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-bg-base);
+    overflow: hidden;
+}
+
+.cs-thead,
+.cs-row {
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.cs-thead {
+    background: var(--color-bg-surface);
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-text-secondary);
+}
+
+.cs-thead > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 14px;
+}
+
+.cs-row {
+    border-bottom: 1px solid var(--color-border);
+    cursor: pointer;
+}
+
+.cs-row:last-child {
+    border-bottom: none;
+}
+
+.cs-row:hover,
+.cs-row.expanded {
+    background: var(--color-bg-surface);
+}
+
+.cs-row-key,
+.cs-row-val {
+    padding: 14px;
+}
+
+.cs-row-key {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.cs-row-label {
+    margin-bottom: 6px;
+    font-size: 0.875rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+}
+
+.cs-chevron {
+    color: var(--color-text-secondary);
+    font-size: 0.75rem;
+}
+
+.cs-diff {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 0.6875rem;
+    font-weight: 700;
+}
+
+.cs-diff.big {
+    background: color-mix(in srgb, var(--color-warning) 12%, var(--color-bg-base));
+    color: var(--color-warning);
+}
+
+.cs-diff.partial {
+    background: color-mix(in srgb, var(--color-caution) 16%, var(--color-bg-base));
+    color: var(--color-caution);
+}
+
+.cs-bullets {
+    margin: 0;
+    padding-left: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    color: var(--color-text-primary);
+}
+
+.cs-more-chip {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 2px 8px;
+    border-radius: 100px;
+    background: var(--color-primary-100);
+    color: var(--color-primary-800);
+    font-size: 0.6875rem;
+    font-weight: 700;
+}
+
+.cs-src {
+    margin-top: 8px;
+    font-size: 0.6875rem;
+    color: var(--color-text-secondary);
+}
+
+@media (max-width: 960px) {
+    .cs-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .cs-thead,
+    .cs-row {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .cs-thead > div:first-child {
+        display: none;
+    }
+}

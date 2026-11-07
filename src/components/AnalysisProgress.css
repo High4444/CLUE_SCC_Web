@@ -1,0 +1,142 @@
+/* 분석 과정 화면(데모 공고) — 워크벤치 패널 자리를 채우고, 끝나면 결과 화면으로 교체된다. */
+.apg-screen {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: var(--color-bg-surface);
+    cursor: pointer;
+}
+
+.apg-card {
+    width: 100%;
+    max-width: 520px;
+    padding: 32px 36px 24px;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 28px rgba(15, 23, 42, 0.08);
+}
+
+.apg-head {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.apg-badge {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: var(--color-primary-50);
+    color: var(--color-primary-700);
+    font-size: 0.75rem;
+    font-weight: 800;
+}
+
+.apg-file {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1.45;
+    color: var(--color-text-primary);
+    word-break: break-all;
+}
+
+.apg-bar {
+    height: 6px;
+    margin-bottom: 24px;
+    border-radius: 999px;
+    background: var(--color-bg-surface);
+    overflow: hidden;
+}
+
+.apg-bar-fill {
+    height: 100%;
+    border-radius: 999px;
+    background: var(--color-primary);
+    transition: width 0.45s ease;
+}
+
+.apg-steps {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.apg-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+}
+
+.apg-step.active,
+.apg-step.done {
+    opacity: 1;
+}
+
+.apg-step-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--color-bg-surface);
+    color: var(--color-text-secondary);
+    font-size: 0.6875rem;
+    font-weight: 800;
+}
+
+.apg-step.active .apg-step-mark {
+    background: var(--color-primary);
+    color: #fff;
+    animation: apg-pulse 1s ease-in-out infinite;
+}
+
+.apg-step.done .apg-step-mark {
+    background: color-mix(in srgb, var(--color-success) 16%, white);
+    color: var(--color-success);
+}
+
+@keyframes apg-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.12); }
+}
+
+.apg-step-texts {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+}
+
+.apg-step-label {
+    font-size: 0.84375rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+}
+
+.apg-step-detail {
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+}
+
+.apg-hint {
+    margin: 22px 0 0;
+    text-align: center;
+    font-size: 0.71875rem;
+    color: var(--color-text-secondary);
+}

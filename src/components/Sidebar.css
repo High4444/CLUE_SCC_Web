@@ -1,0 +1,134 @@
+/* Sidebar.css - Premium Floating Navigation */
+
+.clue-sidebar-wrapper {
+  position: fixed;
+  right: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.clue-sidebar-wrapper.collapsed {
+  /* 5개 메뉴 항목 높이(약 360px)의 절반만큼 아래로 이동시켜 
+     하단 버튼이 원래 '닫기' 위치에 고정되도록 함 */
+  transform: translateY(130px); 
+}
+
+@keyframes sidebar-fade-in {
+  from { opacity: 0; transform: translate(30px, -50%); }
+  to { opacity: 1; transform: translate(0, -50%); }
+}
+
+.clue-sidebar-pill {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 40px;
+  box-shadow: 
+    0 15px 45px rgba(0, 0, 0, 0.08),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+  width: 86px; /* 너비 축소 */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar-nav-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 8px; /* 패딩 축소 */
+  border-bottom: 1px solid rgba(241, 245, 249, 0.6);
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+  background: transparent;
+}
+
+.sidebar-nav-item:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* Active Highlight Styling */
+.sidebar-nav-item.active {
+  background: #FFFFFF;
+}
+
+.sidebar-nav-item.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 15%;
+  height: 70%;
+  width: 3px;
+  background: #3B82F6;
+  border-radius: 0 4px 4px 0;
+  box-shadow: 4px 0 10px rgba(59, 130, 246, 0.4);
+}
+
+.sidebar-nav-item .nav-icon {
+  font-size: 1.25rem; /* 아이콘 크기 축소 */
+  margin-bottom: 6px;
+  transition: transform 0.4s ease;
+  filter: grayscale(0.2) opacity(0.8);
+}
+
+.sidebar-nav-item.active .nav-icon {
+  transform: scale(1.1);
+  filter: grayscale(0) opacity(1);
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.15);
+}
+
+.sidebar-nav-item .nav-text {
+  font-size: 0.71875rem; /* 텍스트 크기 미세 축소 */
+  font-weight: 800;
+  color: #475569;
+  line-height: 1.2;
+  transition: all 0.3s;
+  letter-spacing: -0.6px;
+}
+
+.sidebar-nav-item.active .nav-text {
+  color: #1E3A8A;
+  transform: translateY(-1px);
+}
+
+/* Bottom Close Button */
+.sidebar-footer-btn {
+  background: #1E293B;
+  color: white;
+  padding: 14px 8px; /* 패딩 축소 */
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: 0.78125rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar-footer-btn:hover {
+  background: #0F172A;
+}
+
+.sidebar-footer-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Layout synchronization: Reset for True Center */
+.with-sidebar-content {
+  /* 고정 패딩 제거: 로고는 왼쪽 끝으로, 본문은 화면 중앙으로 복귀 */
+  padding-left: 0;
+  padding-right: 0;
+  transition: padding 0.3s ease;
+}

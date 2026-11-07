@@ -1,0 +1,13 @@
+.mag-lens { position: fixed; z-index: 11000; width: min(320px, calc(100vw - 24px)); height: 190px; overflow: hidden; pointer-events: none; border: 3px solid var(--color-primary-700); border-radius: 24px; background: var(--color-bg-base); box-shadow: 0 8px 32px rgb(15 23 42 / 24%); isolation: isolate; }
+.mag-stage { position: absolute; top: 0; left: 0; transform-origin: 0 0; pointer-events: none; }
+.mag-stage *, .mag-stage *::before, .mag-stage *::after { pointer-events: none !important; animation: none !important; transition: none !important; caret-color: transparent !important; }
+.mag-stage .clue-sidebar-wrapper, .mag-stage .clue-view-standalone { visibility: hidden; }
+.mag-badge { position: absolute; bottom: 0; right: 0; padding: 3px 10px; border-radius: 10px 0 0; background: var(--color-primary-700); color: var(--color-bg-base); font-size: 12px; font-weight: 700; }
+.mag-controls { position: fixed; z-index: 11001; left: 16px; bottom: max(16px, env(safe-area-inset-bottom)); max-width: calc(100vw - 32px); display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 12px; border: 2px solid var(--color-primary-700); border-radius: var(--radius-lg); background: var(--color-bg-base); color: var(--color-text-primary); box-shadow: 0 4px 20px rgb(15 23 42 / 15%); }
+.mag-controls button { min-height: 44px; padding: 8px 12px; border: 1px solid var(--color-primary-700); border-radius: var(--radius-md); font-size: .875rem; color: var(--color-primary-700); }
+.mag-instructions { font-size: .875rem; }
+.mag-key-help { width: 100%; font-size: .75rem; color: var(--color-text-secondary); }
+.mag-panel-start { margin-top: 12px; display: block; width: 100%; min-height: 44px; padding: 12px; border: 2px solid var(--color-primary-700); border-radius: var(--radius-lg); color: var(--color-primary-700); font-size: 1rem; font-weight: 700; }
+html[data-clue-contrast="high"] .mag-lens, html[data-clue-contrast="high"] .mag-controls { background: var(--color-bg-base) !important; }
+html[data-clue-contrast="high"] .mag-badge { background: var(--color-bg-base) !important; color: var(--color-text-primary) !important; }
+@media (max-width: 600px) { .mag-instructions { flex-basis: 100%; } .mag-lens { height: 160px; } }

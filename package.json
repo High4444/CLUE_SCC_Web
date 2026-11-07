@@ -1,0 +1,37 @@
+{
+  "dependencies": {
+    "@vitejs/plugin-react": "^5.1.4",
+    "create-vite": "^8.3.0",
+    "d3": "^7.9.0",
+    "dompurify": "^3.4.11",
+    "framer-motion": "^12.35.0",
+    "matter-js": "^0.20.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-icons": "^5.6.0",
+    "react-router-dom": "^7.18.1",
+    "vite": "^7.3.1"
+  },
+  "name": "clue-scc",
+  "version": "1.0.0",
+  "description": "CLUE SCC 활동용 접근성 프론트엔드",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "dev:web": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "concurrently": "^9.2.4",
+    "eslint": "^9.39.3",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.5.2"
+  }
+}

@@ -1,0 +1,240 @@
+/* SupportPage.css - Premium SaaS Support UI */
+
+.sp-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background: #F8FAFC;
+  color: #0F172A;
+}
+
+/* Header */
+.sp-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #E2E8F0;
+  height: 60px;
+}
+
+.sp-back-btn {
+  padding: 8px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #64748B;
+  display: flex;
+  align-items: center;
+}
+
+.sp-header h2 {
+  font-size: 1.0625rem;
+  font-weight: 850;
+  color: #0F172A;
+  margin-left: 8px;
+  flex: 1;
+}
+
+.sp-coming-soon {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #3B82F6;
+  background: #EFF6FF;
+  padding: 6px 14px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.1);
+}
+
+/* Main Layout */
+.sp-main {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.sp-content-inner {
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Hero Section */
+.sp-hero-card {
+  background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+  border-radius: 28px;
+  padding: 40px 32px;
+  color: white;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+}
+
+.sp-hero-text h3 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+.sp-hero-text p {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 32px;
+}
+
+.sp-btn-row {
+  display: flex;
+  gap: 12px;
+}
+
+.sp-btn-blue {
+  background: white;
+  color: #3B82F6;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 0.90625rem;
+  cursor: pointer;
+}
+
+.sp-btn-outline {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 14px 24px;
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 0.90625rem;
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+}
+
+/* FAQ Section */
+.sp-section {
+  margin-bottom: 40px;
+}
+
+.sp-section-title {
+  font-size: 0.875rem;
+  font-weight: 850;
+  color: #3B82F6;
+  margin: 0 0 16px 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sp-faq-list {
+  background: white;
+  border-radius: 24px;
+  border: 1px solid #E2E8F0;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.sp-faq-item {
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.sp-faq-item:last-child {
+  border-bottom: none;
+}
+
+.sp-faq-q {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.sp-faq-q:hover {
+  background: #F8FAFC;
+}
+
+.sp-faq-box {
+  width: 28px;
+  height: 28px;
+  background: #EFF6FF;
+  border-radius: 8px;
+  color: #3B82F6;
+  font-weight: 850;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sp-faq-text {
+  flex: 1;
+  font-size: 1.0625rem;
+  font-weight: 750;
+  color: #334155;
+}
+
+.sp-arrow {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sp-faq-item.open .sp-arrow {
+  transform: rotate(180deg);
+}
+
+.sp-faq-a {
+  padding: 0 24px 24px 68px;
+  font-size: 0.90625rem;
+  line-height: 1.65;
+  color: #64748B;
+  background: white;
+}
+
+/* General Menu List */
+.sp-menu-list {
+  background: white;
+  border-radius: 24px;
+  border: 1px solid #E2E8F0;
+  overflow: hidden;
+}
+
+.sp-menu-item {
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.sp-menu-item:last-child {
+  border-bottom: none;
+}
+
+.sp-menu-item:hover {
+  background: #F8FAFC;
+}
+
+.sp-menu-label {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+/* Footer Box */
+.sp-footer-box {
+  background: #F1F5F9;
+  border-radius: 16px;
+  padding: 16px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.sp-footer-text {
+  font-size: 0.78125rem;
+  color: #64748B;
+  margin: 0;
+}

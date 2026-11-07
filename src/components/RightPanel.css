@@ -1,0 +1,430 @@
+.right-panel-outer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    background: #FFFFFF;
+}
+
+/* ── Main Tabs ── */
+.rp-main-tabs {
+    display: flex;
+    border-bottom: 1px solid #F1F5F9;
+    flex-shrink: 0;
+    padding: 0 16px;
+}
+
+.rp-main-tab {
+    flex: 1;
+    padding: 20px 0;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #94A3B8;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    transition: all 0.2s;
+}
+
+.rp-main-tab.active {
+    color: #1E293B;
+    border-bottom-color: #1E293B;
+}
+
+/* ── Analysis Body ── */
+.rp-analysis-body {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    gap: 16px;
+}
+
+.rp-analysis-body::-webkit-scrollbar { width: 4px; }
+.rp-analysis-body::-webkit-scrollbar-thumb { background: #E2E8F0; border-radius: 4px; }
+
+/* ── Category Pills ── */
+.rp-cat-pills {
+    display: flex;
+    gap: 6px;
+}
+
+.rp-cat-pill {
+    flex: 1;
+    padding: 8px 4px;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    border: 1.5px solid #E2E8F0;
+    background: #FFFFFF;
+    color: #64748B;
+    transition: all 0.2s;
+    text-align: center;
+}
+
+.rp-cat-pill:hover {
+    border-color: #CBD5E1;
+    background: #F8FAFC;
+}
+
+/* A 행정 용어 = 초록 (success) */
+.rp-cat-pill.active[data-cat="A"] {
+    background: #F0FDF9;
+    color: #059669;
+    border-color: #6EE7B7;
+    box-shadow: 0 1px 4px rgba(16, 185, 129, 0.15);
+}
+
+/* C 문맥 참조 = 파란색 (info) */
+.rp-cat-pill.active[data-cat="C"] {
+    background: #EFF6FF;
+    color: #1D4ED8;
+    border-color: #93C5FD;
+    box-shadow: 0 1px 4px rgba(59, 130, 246, 0.15);
+}
+
+/* I 핵심 정보 = 앰버 (warning) */
+.rp-cat-pill.active[data-cat="I"] {
+    background: #FFFBEB;
+    color: #B45309;
+    border-color: #FCD34D;
+    box-shadow: 0 1px 4px rgba(245, 158, 11, 0.15);
+}
+
+/* D 자격 논리 = 빨간색 (danger) */
+.rp-cat-pill.active[data-cat="D"] {
+    background: #FEF2F2;
+    color: #DC2626;
+    border-color: #FCA5A5;
+    box-shadow: 0 1px 4px rgba(239, 68, 68, 0.15);
+}
+
+/* ── Item Section ── */
+.rp-item-section {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.rp-section-title {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    color: #94A3B8;
+    letter-spacing: 0.3px;
+    padding: 0 2px;
+}
+
+.rp-items {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.rp-item-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.15s;
+    border: 1px solid transparent;
+}
+
+.rp-item-row:hover {
+    background: #F8FAFC;
+}
+
+/* 여러 문항일 때 문항 사이 구분 */
+.rp-quiz-item + .rp-quiz-item {
+    margin-top: 22px;
+    padding-top: 22px;
+    border-top: 1px solid var(--color-border);
+}
+
+.rp-quiz-no {
+    font-size: 0.65625rem;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    color: var(--color-text-secondary);
+}
+
+/* "확인 필요"(needsCheck) 배지 — 항목 부제 옆에 작게 붙는다. */
+.rp-item-check-badge {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 1px 6px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--color-caution) 16%, white);
+    color: var(--color-caution);
+    font-size: 0.625rem;
+    font-weight: 800;
+    vertical-align: 1px;
+}
+
+/* 가운데에서 보고 있는 쪽의 항목 — 선택(active)과 구분되도록 연하게만 표시한다.
+   선택 상태가 아니므로 테두리는 점선, 배경은 더 옅게. */
+.rp-item-row.on-page:not(.active) {
+    background: #F8FAFC;
+    border-color: #E2E8F0;
+    border-style: dashed;
+}
+
+.rp-item-row.active {
+    background: #EFF6FF;
+    border-color: #BFDBFE;
+    border-style: solid;
+}
+
+.rp-item-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #CBD5E1;
+    flex-shrink: 0;
+    transition: background 0.2s;
+}
+
+/* dot colors per category (A=success · C=info · I=warning · D=danger) */
+.rp-item-dot.A { background: #6EE7B7; }
+.rp-item-dot.C { background: #93C5FD; }
+.rp-item-dot.I { background: #FCD34D; }
+.rp-item-dot.D { background: #FCA5A5; }
+
+.rp-item-row.active .rp-item-dot.A { background: #059669; }
+.rp-item-row.active .rp-item-dot.C { background: #1D4ED8; }
+.rp-item-row.active .rp-item-dot.I { background: #B45309; }
+.rp-item-row.active .rp-item-dot.D { background: #DC2626; }
+
+.rp-item-texts {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.rp-item-title {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: #1E293B;
+}
+
+.rp-item-row.active .rp-item-title {
+    color: #1D4ED8;
+}
+
+.rp-item-sub {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    color: #94A3B8;
+}
+
+/* ── Detail Card ── */
+.rp-detail-card {
+    background: #F8FAFC;
+    border-radius: 14px;
+    border: 1px solid #E8ECF0;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.rp-detail-risk-label {
+    font-size: 0.625rem;
+    font-weight: 700;
+    color: #94A3B8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.rp-detail-type-badge {
+    display: inline-flex;
+    align-self: flex-start;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    color: #475569;
+    background: #E8ECF0;
+    border-radius: 6px;
+    padding: 3px 8px;
+}
+
+.rp-detail-title {
+    font-size: 1.125rem;
+    font-weight: 800;
+    color: #1E293B;
+    line-height: 1.3;
+    letter-spacing: -0.3px;
+}
+
+.rp-detail-block {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.rp-detail-block-label {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    color: #64748B;
+}
+
+.rp-detail-block-text {
+    font-size: 0.8125rem;
+    font-weight: 400;
+    color: #475569;
+    line-height: 1.65;
+}
+
+/* ── Quiz Body ── */
+.rp-quiz-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+}
+
+.rp-quiz-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* 한 문항 안의 간격은 전부 여기서 준다(문제 번호 → 질문 → 보기 → 답 확인 → 피드백). */
+.rp-quiz-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.rp-quiz-question {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #1E293B;
+    line-height: 1.5;
+    /* 질문과 보기는 다른 덩어리라 한 칸 더 띄운다. */
+    margin: 0 0 8px;
+}
+
+.rp-quiz-opts {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.rp-quiz-opt {
+    padding: 11px 14px;
+    border-radius: 10px;
+    border: 1.5px solid #F1F5F9;
+    background: #FAFBFC;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.2s;
+    line-height: 1.4;
+}
+
+.rp-quiz-opt:hover:not(.selected):not(.correct):not(.wrong) {
+    border-color: #CBD5E1;
+    background: #F8FAFC;
+}
+
+.rp-quiz-opt.selected { border-color: #3B82F6; background: #EFF6FF; color: #2563EB; }
+.rp-quiz-opt.correct  { border-color: #10B981; background: #ECFDF5; color: #059669; }
+.rp-quiz-opt.wrong    { border-color: #EF4444; background: #FEF2F2; color: #DC2626; }
+
+.rp-quiz-check-btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 0.8125rem;
+    font-weight: 800;
+    cursor: pointer;
+    background: #E2E8F0;
+    color: #94A3B8;
+    border: none;
+    transition: all 0.2s;
+}
+
+.rp-quiz-check-btn.active {
+    background: #1E293B;
+    color: white;
+}
+
+.rp-quiz-check-btn:disabled { cursor: not-allowed; opacity: 0.7; }
+
+.rp-quiz-feedback {
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 0.78125rem;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.rp-quiz-retry-btn {
+    align-self: center;
+    padding: 6px 12px;
+    border: none;
+    background: none;
+    color: var(--color-text-secondary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.rp-quiz-retry-btn:hover { color: var(--color-primary-700); }
+
+.rp-quiz-feedback.success { background: #ECFDF5; color: #059669; }
+.rp-quiz-feedback.wrong   { background: #FFFBEB; color: #92400E; }
+
+/* ── Footer ── */
+.rp-footer {
+    padding: 14px 16px;
+    border-top: 1px solid #F1F5F9;
+    display: flex;
+    gap: 10px;
+    background: #FFFFFF;
+    flex-shrink: 0;
+}
+
+.rp-foot-secondary {
+    flex: 1;
+    padding: 13px;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    cursor: pointer;
+    background: #FFFFFF;
+    color: #475569;
+    border: 1.5px solid #E2E8F0;
+    transition: all 0.2s;
+}
+
+.rp-foot-secondary:hover {
+    background: #F8FAFC;
+}
+
+.rp-foot-primary {
+    flex: 1.5;
+    padding: 13px;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    font-weight: 800;
+    cursor: pointer;
+    background: #2563EB;
+    color: white;
+    border: none;
+    transition: all 0.2s;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+.rp-foot-primary:hover {
+    background: #1D4ED8;
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+    transform: translateY(-1px);
+}

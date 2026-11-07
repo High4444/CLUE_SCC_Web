@@ -1,0 +1,76 @@
+.cd-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(4px);
+}
+
+.cd-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 24px;
+    border-radius: 18px;
+    background: var(--color-bg-base);
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.25);
+}
+
+.cd-title {
+    margin: 0 0 8px;
+    font-size: 1.125rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+}
+
+.cd-message {
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    word-break: keep-all;
+}
+
+.cd-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 22px;
+}
+
+.cd-btn {
+    padding: 10px 18px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    font-size: 0.875rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.cd-btn-cancel {
+    background: var(--color-bg-surface);
+    border-color: var(--color-border);
+    color: var(--color-text-primary);
+}
+
+.cd-btn-cancel:hover {
+    background: var(--color-border);
+}
+
+.cd-btn-primary {
+    background: var(--color-primary);
+    color: var(--color-bg-base);
+}
+
+.cd-btn-danger {
+    background: var(--color-warning);
+    color: var(--color-bg-base);
+}
+
+.cd-btn-primary:hover,
+.cd-btn-danger:hover {
+    filter: brightness(0.92);
+}

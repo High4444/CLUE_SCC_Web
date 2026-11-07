@@ -1,0 +1,523 @@
+/* CalendarPage.css - Premium Alignment Synchronization */
+
+.cp-page-wrapper {
+  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  background: radial-gradient(circle at top right, #EEF2FF 0%, #F8FAFC 40%, #FFFFFF 100%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.cp-page-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+/* 1. Header - Unified System */
+.cp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px; /* 20px -> 40px로 '내 저장 공고'와 완벽 동기화 */
+  background: white;
+  border-bottom: 1px solid #E2E8F0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  height: 60px; /* 80px -> 60px로 '내 저장 공고'와 완벽 동기화 */
+}
+
+.cp-header-left {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.cp-logo {
+  font-size: 1.375rem;
+  font-weight: 900;
+  color: #1E3A8A;
+  flex-shrink: 0;
+  width: 80px;
+  letter-spacing: -0.5px;
+  cursor: pointer;
+}
+
+.cp-header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 2. Main Layout */
+.cp-main {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  /* 기존 1240px에서 1400px로 대폭 확장 */
+  margin: 0 auto;
+  padding: 20px 20px 60px;
+  width: 100%;
+}
+
+.cp-page-header {
+  max-width: 1240px;
+  margin: 0 auto 30px;
+  padding: 0 50px;
+  width: 100%;
+}
+
+.cp-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cp-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cp-title-row h1 {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #0F172A;
+  margin: 0;
+  letter-spacing: -1.5px;
+}
+
+.cp-count-badge {
+  background: #EFF6FF;
+  color: #3B82F6;
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 800;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.cp-title-group p {
+  font-size: 0.9375rem;
+  color: #64748B;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* 3. Content Grid Layout */
+.cp-content-grid {
+  display: flex;
+  gap: 30px;
+  padding: 0 30px;
+  /* Align content to 30px baseline */
+}
+
+/* Calendar Section */
+.cp-calendar-section {
+  flex: 1;
+  background: white;
+  border-radius: 24px;
+  border: 1px solid #E2E8F0;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.cp-calendar-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  /* 24px에서 12px로 축소하여 촘촘하게 조정 */
+}
+
+.cp-calendar-controls h3 {
+  font-size: 1.375rem;
+  font-weight: 900;
+  color: #1E293B;
+  letter-spacing: -0.5px;
+}
+
+.cp-ctrl-btns {
+  display: flex;
+  gap: 8px;
+}
+
+.cp-ctrl-btn {
+  padding: 10px;
+  border-radius: 14px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  color: #64748B;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cp-ctrl-btn:hover {
+  background: #F8FAFC;
+  color: #3B82F6;
+  border-color: #3B82F6;
+}
+
+/* Calendar Grid Styling */
+.cp-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 1px;
+  background: #F1F5F9;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid #F1F5F9;
+  table-layout: fixed;
+}
+
+.cp-day-label {
+  padding: 14px;
+  text-align: center;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  color: #94A3B8;
+  background: #F8FAFC;
+}
+
+.cp-day-cell {
+  height: 103px;
+  /* 110px에서 90px로 축소하여 콤팩트하게 조정 */
+  padding: 12px;
+  background: #FFFFFF;
+  position: relative;
+  transition: background 0.2s;
+}
+
+.cp-day-cell:hover {
+  background: #FBFCFF;
+}
+
+.cp-day-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.cp-day-num {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #64748B;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+/* 1. 오늘 날짜 강조 스타일 */
+.cp-day-cell.today-cell {
+  background-color: #EFF6FF !important; /* 소프트 블루 배경 */
+  border: 1.5px solid #3B82F6 !important; /* 파란색 테두리 */
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 1px #3B82F6;
+  z-index: 2; /* 그리드 테두리 위로 노출 */
+}
+
+.cp-day-cell.today-cell:hover {
+  background-color: #DBEAFE !important;
+}
+
+.cp-day-num.today {
+  background-color: #3B82F6; /* 파란색 동그라미 배경 */
+  color: white !important; /* 흰색 글씨 */
+  border-radius: 50%;
+  font-weight: 800;
+  box-shadow: 0 2px 6px rgba(59, 130, 246, 0.3);
+}
+
+/* 2. 주말 및 공휴일 구분 스타일 */
+.cp-day-label.sunday {
+  color: #EF4444; /* 일요일 헤더 빨간색 */
+}
+
+.cp-day-label.saturday {
+  color: #3B82F6; /* 토요일 헤더 파란색 */
+}
+
+.cp-day-cell.sunday .cp-day-num:not(.today),
+.cp-day-cell.holiday .cp-day-num:not(.today) {
+  color: #EF4444; /* 일요일/공휴일 날짜 빨간색 */
+}
+
+.cp-day-cell.saturday .cp-day-num:not(.today) {
+  color: #3B82F6; /* 토요일 날짜 파란색 */
+}
+
+.cp-holiday-name {
+  font-size: 0.625rem;
+  color: #EF4444;
+  font-weight: 800;
+  margin-left: 6px;
+  white-space: nowrap;
+}
+
+.cp-deadline-bar {
+  margin-top: 8px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 0.71875rem;
+  font-weight: 700;
+  border-left: 4px solid transparent;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  /* 더욱 부드러운 베이지어 애니메이션 */
+  position: relative;
+  z-index: 1;
+}
+
+.cp-deadline-bar:hover {
+  transform: translateX(4px);
+  overflow: visible;
+  width: max-content;
+  max-width: 260px;
+  /* 너무 길어지지 않게 최대치 제한 */
+  z-index: 100;
+  background: white !important;
+  /* 배경을 흰색으로 반전시켜 돋보이게 함 */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  padding-right: 15px;
+  border-radius: 10px;
+}
+
+/* Side Panel Layout */
+.cp-side-panel {
+  width: 280px;
+  /* 320px에서 280px로 축소하여 캘린더에 너비 양보 */
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cp-side-card {
+  background: white;
+  border-radius: 20px;
+  border: 1px solid #E2E8F0;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.cp-side-card h4 {
+  font-size: 1.0625rem;
+  font-weight: 800;
+  color: #1E293B;
+  margin-bottom: 20px;
+}
+
+.cp-deadline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cp-deadline-item {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.cp-item-date {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.cp-item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.cp-item-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #1E293B;
+}
+
+.cp-item-time {
+  font-size: 0.75rem;
+  color: #94A3B8;
+  font-weight: 500;
+}
+
+/* Promo Card Card */
+.cp-side-card.promo {
+  background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+  border: 1px solid #BFDBFE;
+}
+
+.cp-side-card.promo p {
+  font-size: 0.84375rem;
+  color: #475569;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.cp-promo-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  background: #3B82F6;
+  color: white;
+  font-weight: 800;
+  font-size: 0.84375rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.cp-promo-btn:hover {
+  background: #2563EB;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+}
+
+/* Common Components Polish */
+.persona-container {
+  position: relative;
+}
+
+.persona-trigger {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px; /* 로그아웃 버튼과 동일하게 36px로 고정 */
+  padding: 0 12px; /* 상하 패딩 제거 후 높이로 제어 */
+  border-radius: 99px;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.persona-trigger:hover,
+.persona-trigger.active {
+  background: white;
+  border-color: #3B82F6;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.08);
+}
+
+.p-avatar {
+  width: 24px; /* 28px -> 24px */
+  height: 24px;
+  border-radius: 50%;
+  background: #3B82F6;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6875rem; /* 13px -> 11px */
+  font-weight: 800;
+}
+
+.p-name {
+  font-size: 0.8125rem; /* 14px -> 13px */
+  font-weight: 700;
+  color: #1E293B;
+}
+
+.p-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.v-divider-small {
+  width: 1px;
+  height: 14px;
+  background: #E2E8F0;
+}
+
+.p-badge {
+  font-size: 0.625rem; /* 11px -> 10px */
+  font-weight: 800;
+  color: #3B82F6;
+  background: #EFF6FF;
+  padding: 1px 6px; /* 2px 8px -> 1px 6px */
+  border-radius: 4px;
+}
+
+.p-chevron {
+  transition: transform 0.2s;
+  color: #94A3B8;
+}
+
+.p-chevron.open {
+  transform: rotate(180deg);
+}
+
+.nav-btn.primary {
+  height: 36px; /* 프로필 영역과 동일하게 36px로 고정 */
+  padding: 0 16px; /* 상하 패딩 제거 후 높이로 제어 */
+  border-radius: 99px; /* 개인정보 영역과 동일하게 완전히 둥근 캡슐형으로 변경 */
+  background: #2563EB;
+  color: white;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.nav-btn.primary:hover {
+  background: #1D4ED8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+/* Context Menu for Deletion */
+.cp-context-menu {
+  position: fixed;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid #E2E8F0;
+  padding: 6px;
+  z-index: 10000;
+  min-width: 120px;
+}
+
+.cp-cm-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 12px;
+  background: transparent;
+  border: none;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.cp-cm-btn.delete {
+  color: #EF4444;
+}
+
+.cp-cm-btn.delete:hover {
+  background: #FEF2F2;
+  color: #DC2626;
+}

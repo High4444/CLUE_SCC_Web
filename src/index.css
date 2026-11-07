@@ -1,0 +1,317 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+/* Global Scrollbar Hiding */
+* {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+:root {
+  /* Color Palette (Trust Blue Theme) */
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  /* Main Blue */
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-primary-800: #1e40af;
+  --color-primary-900: #1e3a8a;
+  --color-primary-950: #172554;
+
+  --color-primary: #3b82f6;
+  /* Blue 500 */
+  --color-success: #10B981;
+  /* Execution Green (Keep for action receipts) */
+  --color-warning: #EF4444;
+  --color-caution: #D97706;
+  /* Alert Red */
+
+  --color-bg-base: #FFFFFF;
+  /* Base White */
+  --color-bg-surface: #F8FAFC;
+  /* Surface Gray (Keeping clean slate) */
+
+  --color-text-primary: #0F172A;
+  /* Primary Text */
+  --color-text-secondary: #475569;
+  /* Secondary Text */
+  --color-text-muted: #94A3B8;
+  --color-complete: #7C3AED;
+  /* Complete — 분석완료 상태(업로드 내역) 보라 */
+  /* Muted Text — 메타 정보(조회·저장 시각 등) */
+
+  --color-border: #E2E8F0;
+
+  /* Fonts */
+  --font-primary: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', sans-serif;
+  --font-mono: 'JetBrains Mono',
+    'Courier New',
+    monospace;
+
+  /* UI Measurements */
+  --panel-left-width: 320px;
+  --panel-right-width: 400px;
+  --header-height: 60px;
+  --gap-md: 16px;
+  --gap-lg: 24px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-base);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+p,
+span,
+div {
+  font-weight: 400;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* Base App Layout */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Workbench fixed layout (no scroll) */
+.app-fixed {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Utility Classes */
+.text-primary {
+  color: var(--color-text-primary);
+}
+
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-trust {
+  color: var(--color-primary);
+}
+
+.text-success {
+  color: var(--color-success);
+}
+
+.text-warning {
+  color: var(--color-warning);
+}
+
+.bg-surface {
+  background-color: var(--color-bg-surface);
+}
+
+.bg-base {
+  background-color: var(--color-bg-base);
+}
+
+/* Common UI Elements */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #2563eb;
+  /* Darker Blue */
+}
+
+.btn-secondary {
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+}
+
+.btn-secondary:hover {
+  background-color: #F1F5F9;
+}
+
+.btn-outline-success {
+  border: 1px solid var(--color-success);
+  color: var(--color-success);
+  background-color: transparent;
+}
+
+.btn-outline-success.active {
+  background-color: var(--color-success);
+  color: white;
+}
+
+.card {
+  background-color: var(--color-bg-base);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* --- Scroll Animations & Dynamic Effects --- */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-1 {
+  transition-delay: 0.1s;
+}
+
+.stagger-2 {
+  transition-delay: 0.2s;
+}
+
+.stagger-3 {
+  transition-delay: 0.3s;
+}
+
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+  border-color: rgba(59, 130, 246, 0.5) !important;
+}
+
+.floating-element {
+  animation: floatAnimation 6s ease-in-out infinite;
+}
+/* SCC high contrast: preserve images/PDFs, use solid surfaces and visible boundaries. */
+html[data-clue-contrast="high"] {
+  --color-bg-base: #FFFFFF;
+  --color-bg-surface: #FFFFFF;
+  --color-text-primary: #000000;
+  --color-text-secondary: #000000;
+  --color-text-muted: #000000;
+  --color-border: #000000;
+  --color-primary: #003399;
+  --color-primary-700: #003399;
+}
+html[data-clue-contrast="high"] body,
+html[data-clue-contrast="high"] body *:not(svg):not(svg *) {
+  color: var(--color-text-primary) !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border-color: var(--color-border) !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+html[data-clue-contrast="high"] :is(button, input, select, textarea, .sidebar-nav-item, .cp-token) {
+  outline: 1px solid var(--color-border);
+  outline-offset: -1px;
+}
+html[data-clue-contrast="high"] a { text-decoration: underline; }
+html[data-clue-contrast="high"] :is(button, a, input, select, textarea, [tabindex]):focus-visible {
+  outline: 3px solid var(--color-primary-700); outline-offset: 3px;
+}
+html[data-clue-contrast="high"] .a11y-switch[aria-checked="true"] span {
+  background: var(--color-text-primary) !important; color: var(--color-bg-base) !important;
+}
+
+html[data-clue-contrast="high"] :is(body, dialog, [role="dialog"], .clue-sidebar-pill, .a11y-launcher, .db-top-nav) {
+  background-color: var(--color-bg-base) !important;
+}
+html[data-clue-contrast="high"] *::before,
+html[data-clue-contrast="high"] *::after {
+  background-image: none !important;
+  box-shadow: none !important;
+}
