@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>CLUE</title></head>
+<body><script>
+  // 프로젝트 사이트는 첫 경로 구간이 저장소 이름이다.
+  const path = location.pathname;
+  const base = '/' + path.split('/')[1] + '/';
+  const params = new URLSearchParams(location.search);
+  params.set('__clue_route', path);
+  location.replace(base + '?' + params.toString() + location.hash);
+</script></body></html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CLUE</title>
+  <script type="module" crossorigin src="/CLUE_SCC_Web/assets/index-DnGnl2cN.js"></script>
+  <link rel="stylesheet" crossorigin href="/CLUE_SCC_Web/assets/index-DEIQ_yZY.css">
+</head>
+
+<body>
+  <script>
+    // GitHub Pages의 SPA 새로고침 시 원래 경로를 복원한다. OAuth 해시도 그대로 유지한다.
+    const params = new URLSearchParams(window.location.search);
+    const route = params.get('__clue_route');
+    if (route && route.startsWith('/') && !route.startsWith('//')) {
+      params.delete('__clue_route');
+      const search = params.toString();
+      history.replaceState(null, '', route + (search ? '?' + search : '') + location.hash);
+    }
+  </script>
+  <div id="root"></div>
+</body>
+
+</html>
