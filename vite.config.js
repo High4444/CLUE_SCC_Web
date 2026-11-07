@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/CLUE_SCC_demo/',
+  base: '/CLUE_SCC_Web/',
   plugins: [react()],
 })
